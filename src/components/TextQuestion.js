@@ -35,37 +35,21 @@ const ResultText = styled.div`
         font-weight: normal;
         text-align: left; 
   
-       display: ${(props) => (props.completed==true ? "block" : "none")};
+      /* display: ${(props) => (props.completed==true ? "block" : "none")};*/
   
 `;
 
-const TextQuestion = ({ questionObject, userChoice, onQuestionComplete }) => {
-    /*let [isCorrect, setIsCorrect] = useState(null);*/
-
-
-    console.log("questionObject : " , questionObject)
-
-
-    useEffect(() =>
-    {
-        console.log("user eff")
-        onQuestionComplete();
-    }, [userChoice, onQuestionComplete, questionObject]);
-
-    //console.log("isc  : ", isCorrect)
+const TextQuestion = (props) => {
+   /* let [questionResult, setQuestionResult] = useState(props.result);*/
 
     return (
         <Container>
-            <QuestionText className="part2a-quesion-text">{questionObject.questionText}</QuestionText>
-            {questionObject.isCorrect !== null && (
-                <ResultText className={"result-text"} isCorrect={questionObject.isCorrect} completed={questionObject.completed}>
-                    {
-                        questionObject.isCorrect
-                        ? "Your answer is correct."
-                        : `Your answer is incorrect. The correct choice is ${questionObject.correctChoice}.`
-                    }
+            <QuestionText className="part2a-quesion-text">{props.questionObject.questionText}</QuestionText>
+
+                <ResultText className={"result-text"}>
+                    {props.result}
                 </ResultText>
-            )}
+            )
         </Container>
     );
 };

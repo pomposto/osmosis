@@ -6,7 +6,6 @@ import questionBG from '../assets/img/mitosis_question_area1.png';
 import TextQuestion from "./TextQuestion";
 import Pagination from "./Pagination";
 
-
 const StyledPart2a = styled.div`
   position: relative;
   /*background-color: rgba(255,127,80,0.49);*/
@@ -15,7 +14,7 @@ const StyledPart2a = styled.div`
   height: 821px;
   
 `;
-const CentromerPartsWrapper =styled.div`
+const CentromerPartsWrapper = styled.div`
     width: 400px;
     height: 600px;
     display: inline-block;
@@ -23,8 +22,7 @@ const CentromerPartsWrapper =styled.div`
     
 `;
 
-
-const StyledQuestionWrapper =styled.div`
+const StyledQuestionWrapper = styled.div`
     width: 830px;
     height: 720px;
     position: relative;
@@ -57,28 +55,30 @@ export const Part2a = (props) => {
     const [selectedIndex, setSelectedIndex] = useState(0);
 
     let [questionObject, setQuestionObject] = React.useState(props.obj.questions[selectedIndex]);
+    let [questionCompleted, setQuestionCompleted] = React.useState(false);
+    let [questionResult, setQuestionResult] = React.useState(false);
 
-
-    let sectionClicked = function (obj)
-    {
-        if(questionObject.result != "")
-        {
+    console.log("q : ", questionObject)
+    let sectionClicked = function (obj) {
+        if (questionObject.result != "") {
             return;
         }
-        ////console.log("section clicked : " , obj.name)
+        console.log("section clicked : ", obj.name)
 
         questionObject.userChoice = obj.name;
-        if(questionObject.userChoice == questionObject.correctChoice)
-        {
-            questionObject.result = true;
+        if (questionObject.userChoice == questionObject.correctChoice) {
+            questionObject.result = "Your answer is correct.";
+        } else {
+            questionObject.result = "Your answer is wrong. Correct answer is " + questionObject.correctChoice;
         }
-        else
-        {
-            questionObject.result = false;
-        }
+
+        /*setQuestionObject(props.obj.questions[selectedIndex]);*/
 
         questionObject.completed = true;
         setQuestionObject(questionObject);
+
+        setQuestionCompleted(true);
+        setQuestionResult(questionObject.result);
 
     }
 
@@ -86,6 +86,10 @@ export const Part2a = (props) => {
 
         setSelectedIndex(pageIndex);
         setQuestionObject(props.obj.questions[pageIndex]);
+
+        setQuestionResult(props.obj.questions[pageIndex].result);
+        setQuestionCompleted(props.obj.questions[pageIndex].completed);
+
         ////console.log("pagination handler :", pageIndex , "obj : " ,  props.obj.questions[pageIndex])
     };
 
@@ -93,15 +97,13 @@ export const Part2a = (props) => {
 
         props.obj.questions[selectedIndex] = questionObject;
 
-        console.log("check complete : " , checkComplete());
+        console.log("check complete : ", checkComplete());
 
     };
 
     const checkComplete = function () {
-        for(var i=0; i<QUESTION_SIZE; i++)
-        {
-            if( props.obj.questions[i].result == "")
-            {
+        for (var i = 0; i < QUESTION_SIZE; i++) {
+            if (props.obj.questions[i].result == "") {
                 //console.log("rops.obj.questions[i].result : " , props.obj.questions);
 
                 return false
@@ -111,32 +113,27 @@ export const Part2a = (props) => {
         return true;
     }
 
-
-    return(
-        <StyledPart2a id={"Part2a"} >
+    return (
+        <StyledPart2a id={"Part2a"}>
             <CentromerPartsWrapper>
-                <CentromerParts id="centromerParts_1" sectionClicked={sectionClicked} obj={props.obj.sections }></CentromerParts>
+                <CentromerParts id="centromerParts_1" sectionClicked={sectionClicked}
+                                obj={props.obj.sections}></CentromerParts>
             </CentromerPartsWrapper>
 
 
             <StyledQuestionWrapper className="part2a-question-wrapper">
                 <TextQuestion
                     questionObject={questionObject}
-                    completed = {questionObject.completed}
-
-                    onQuestionComplete={handleQuestionCompleted}
+                    result={questionResult}
                 />
 
                 <StyledPaginationWrapper className="part2a-pagination">
-                    <Pagination pageCount={QUESTION_SIZE} selectedIndex={selectedIndex} onPageClick={handlePageClick}></Pagination>
+                    <Pagination pageCount={QUESTION_SIZE} selectedIndex={selectedIndex}
+                                onPageClick={handlePageClick}></Pagination>
                 </StyledPaginationWrapper>
 
             </StyledQuestionWrapper>
 
-
-
-
-          
 
         </StyledPart2a>
     )
