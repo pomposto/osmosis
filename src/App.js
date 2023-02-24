@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
-import React, {useState} from "react";
-import {Routes, Route, Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import React, {useState, useEffect} from "react";
+import {Routes, Route, Link, NavLink, useNavigate, useLocation, useRoutes } from "react-router-dom";
 
 
 import {Header} from "./partials/Header";
@@ -10,6 +10,7 @@ import {Intro} from "./components/Intro";
 import {Part1} from "./components/Part1";
 import {Part2a} from "./components/Part2a";
 import {Part2b} from "./components/Part2b";
+import Reports1 from "./components/Reports1";
 import appData from "./dataset.js"
 import {Content} from "./partials/Content";
 import styled from "styled-components";
@@ -26,35 +27,37 @@ function App() {
 
     let dataSet = appData();
 
-
-    /*////console.log("loc : " , location.pathname)*/
-
     var routes =
         [
             {'route':'/' , index:0},
             {'route':'/Part1' , index:1},
             {'route':'/Part2a' , index:2},
             {'route':'/Part2b' , index:3},
+            {'route':'/Part2c' , index:4},
         ]
 
     let partIndex = getIndexByRoute(location.pathname);
-    /*////console.log("part index : " , partIndex)*/
+    /*////////console.log("part index : " , partIndex)*/
     const [obj, setObj] = useState(dataSet.parts[partIndex]);
+    let [reportObj1, setReportObj1] = useState(getPartByName(dataSet.parts, "Part2c"));
 
-    /*////console.log("dataset part2a : " , getPartByName(dataSet.parts, "Part2a"))*/
 
-    let Part2aObj = getPartByName(dataSet.parts, "Part2a");
+    var Part2aObj = getPartByName(dataSet.parts, "Part2a");
     Part2aObj.questions = shuffleQuestions(Part2aObj.questions);
-    let Part2bObj = getPartByName(dataSet.parts, "Part2b");
-    Part2bObj.questions = shuffleQuestions(Part2bObj.questions);
+    Part2aObj.questions = getQuestions(Part2aObj.questions , 1, 1,1,1);
 
-    
+    var Part2bObj = getPartByName(dataSet.parts, "Part2b");
+    Part2bObj.questions = shuffleQuestions(Part2bObj.questions);
+    Part2bObj.questions = getQuestions(Part2bObj.questions , 1, 1,1,1);
+
+
+
+
     function nextClickHandler() {
 
         partIndex++;
         var partsObj = dataSet.parts[partIndex];
         setObj(partsObj)
-       /* ////console.log("partsObj : " , partsObj)*/
 
         navigate(routes[partIndex].route);
 
@@ -77,7 +80,57 @@ function App() {
         return null;
     }
 
+    function getQuestions(arr, telomere, euchro, centromere, hetero) {
+        var newArr = [];
+        var te= 0;
+        var eu= 0;
+        var ce= 0;
+        var he= 0;
 
+        var i=0;
+        while(te+ eu + ce + he < telomere + euchro + centromere + hetero)
+        {
+            var currentQuestion = arr[i];
+            if(currentQuestion.type == "Telomere")
+            {
+                if(te<telomere)
+                {
+                    newArr.push(currentQuestion);
+                    te++;
+                }
+            }
+            else if(currentQuestion.type == "Euchromatin")
+            {
+                if(eu<euchro)
+                {
+                    newArr.push(currentQuestion);
+                    eu++;
+                }
+            }
+            else if(currentQuestion.type == "Centromere")
+            {
+                if(ce<centromere)
+                {
+                    newArr.push(currentQuestion);
+                    ce++
+                }
+            }
+            else if(currentQuestion.type == "Heterochromatin")
+            {
+                if(he<hetero)
+                {
+                    newArr.push(currentQuestion);
+                    he++;
+                }
+            }
+            i++;
+            i=i%arr.length;
+        }
+
+
+        return newArr;
+    }
+    
     function shuffleQuestions(questions) {
         // Use the Fisher-Yates shuffle algorithm to shuffle the array
         for (let i = questions.length - 1; i > 0; i--) {
@@ -88,12 +141,41 @@ function App() {
         return questions;
     }
 
-    function onPartCompleteHandler() {
-        ////console.log("Part Complete Handler generate Report")
+    function onPartCompleteHandler(name , obj) {
+        //console.log("Part Complete Handler generate Report : " , obj);
+        switch (name) {
+            case "Part2a":
+                setReportObj1(obj)
+
+                break;
+
+            case "Part2b":
+                setReportObj1(obj)
+
+          /*  console.log("dataSet.parts : " , dataSet.parts);
+            console.log("reportObj1 : " , reportObj1);*/
+
+                break;
+
+        }
     }
 
+
+    const handleResize = () => {
+        const ratio = window.innerWidth / 3000;
+
+        document.getElementById("mainApp").style.transform = "scale(" + ratio + ")";
+    };
+    /*handleResize();*/
+    window.addEventListener('resize', handleResize);
+
+
+    useEffect(() => {
+        handleResize()
+    }, []);
+
   return (
-    <div className="App">
+    <div id="mainApp" className="App"  >
 
         <Header></Header>
 
@@ -101,8 +183,9 @@ function App() {
             <Routes>
                 <Route path="/" element={ <Intro obj={obj}/> }></Route>
                 <Route path="/Part1" element={ <Part1 obj={obj} /> }></Route>
-                <Route path="/Part2a" element={ <Part2a obj={obj} onPartComplete={onPartCompleteHandler} /> }></Route>
-                <Route path="/Part2b" element={ <Part2b obj={obj} /> }></Route>
+                <Route path="/Part2a" element={ <Part2a obj={obj} reports={reportObj1} onPartComplete={onPartCompleteHandler} /> }></Route>
+                <Route path="/Part2b" element={ <Part2b obj={obj} reports={reportObj1} onPartComplete={onPartCompleteHandler}/> }></Route>
+                <Route path="/Part2c" element={ <Reports1 obj={reportObj1} /> }></Route>
             </Routes>
         </AppContent>
 

@@ -48,9 +48,9 @@ const StyledPaginationWrapper = styled.div`
 `;
 
 export const Part2a = (props) => {
-    ////console.log("Part 2a props  : " , props.obj);
+    ////////console.log("Part 2a props  : " , props.obj);
     let obj = props.obj;
-    const QUESTION_SIZE = 5;
+    var QUESTION_SIZE = props.obj.questions.length;
 
     const [selectedIndex, setSelectedIndex] = useState(0);
 
@@ -58,17 +58,27 @@ export const Part2a = (props) => {
     let [questionCompleted, setQuestionCompleted] = React.useState(false);
     let [questionResult, setQuestionResult] = React.useState(false);
 
-    console.log("q : ", questionObject)
+    ////console.log("q : ", questionObject)
     let sectionClicked = function (obj) {
         if (questionObject.result != "") {
             return;
         }
-        console.log("section clicked : ", obj.name)
+        ////console.log("section clicked : ", obj.name)
 
         questionObject.userChoice = obj.name;
-        if (questionObject.userChoice == questionObject.correctChoice) {
+
+        var report = getReportByName(questionObject.type);
+        /*//console.log("report : " , props.reports.reports);*/
+        //console.log("report : " , report);
+
+        report.questionCount++;
+        if (questionObject.userChoice == questionObject.correctChoice)
+        {
             questionObject.result = "Your answer is correct.";
-        } else {
+            report.correctCount++;
+        }
+        else
+        {
             questionObject.result = "Your answer is wrong. Correct answer is " + questionObject.correctChoice;
         }
 
@@ -80,6 +90,18 @@ export const Part2a = (props) => {
         setQuestionCompleted(true);
         setQuestionResult(questionObject.result);
 
+        if(checkComplete())
+        {
+            props.onPartComplete( "Part2a" , props.reports);
+        }
+
+        function getReportByName(name) {
+            for (var i = 0; i < props.reports.reports.length; i++) {
+                if (props.reports.reports[i].type == name) {
+                    return props.reports.reports[i];
+                }
+            }
+        }
     }
 
     const handlePageClick = (pageIndex) => {
@@ -90,21 +112,21 @@ export const Part2a = (props) => {
         setQuestionResult(props.obj.questions[pageIndex].result);
         setQuestionCompleted(props.obj.questions[pageIndex].completed);
 
-        ////console.log("pagination handler :", pageIndex , "obj : " ,  props.obj.questions[pageIndex])
+        ////////console.log("pagination handler :", pageIndex , "obj : " ,  props.obj.questions[pageIndex])
     };
 
     const handleQuestionCompleted = () => {
 
+
         props.obj.questions[selectedIndex] = questionObject;
 
-        console.log("check complete : ", checkComplete());
 
     };
 
     const checkComplete = function () {
         for (var i = 0; i < QUESTION_SIZE; i++) {
             if (props.obj.questions[i].result == "") {
-                //console.log("rops.obj.questions[i].result : " , props.obj.questions);
+                //////console.log("rops.obj.questions[i].result : " , props.obj.questions);
 
                 return false
             }

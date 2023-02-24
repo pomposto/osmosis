@@ -34,7 +34,7 @@ export default function appData() {
                                 'selected': true,
                                 'completed': false,
                                 'name': 'Telomere',
-                                'bg': "../assets/img/kromozom1.png",
+                                'bg': "../assets/img/k3.png",
                                 'color': '#d5eace',
                                 'textColor': '#6E8C66',
                                 'video':
@@ -57,7 +57,7 @@ export default function appData() {
                                 'selected': false,
                                 'completed': false,
                                 'name': 'Euchromatin',
-                                'bg': "../assets/img/kromozom2.png",
+                                'bg': "../assets/img/k2.png",
                                 'color': '#DAC2F7',
                                 'textColor': '#604679',
                                 'resourceUrl': '',
@@ -72,7 +72,7 @@ export default function appData() {
                                 'selected': false,
                                 'completed': false,
                                 'name': 'Centromere',
-                                'bg': '../assets/img/kromozom3.png',
+                                'bg': '../assets/img/k3.png',
                                 'color': '#CDF7F4',
                                 'textColor': '#48827c',
                                 'resourceUrl': '',
@@ -86,7 +86,7 @@ export default function appData() {
                                 'selected': false,
                                 'completed': false,
                                 'name': 'Heterochromatin',
-                                'bg': '../assets/img/kromozom4.png',
+                                'bg': '../assets/img/k4.png',
                                 'color': '#FFDCDA',
                                 'textColor': '#6d4d4a',
                                 'resourceUrl': '',
@@ -108,67 +108,237 @@ export default function appData() {
                             'drafted':false,
                             'questionText':"0questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"1questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"2questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"3questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"4questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"5questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
                             'correctChoice':'Telomere',
+                            'type':'Telomere',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"6questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
-                            'correctChoice':'Telomere',
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"7questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
-                            'correctChoice':'Telomere',
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"8questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
-                            'correctChoice':'Telomere',
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
                             'result':""
                         },
                         {
                             'drafted':false,
                             'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
-                            'correctChoice':'Telomere',
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Euchromatin',
+                            'type':'Euchromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Centromere',
+                            'type':'Centromere',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Heterochromatin',
+                            'type':'Heterochromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Heterochromatin',
+                            'type':'Heterochromatin',
+                            'result':""
+                        },
+
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Heterochromatin',
+                            'type':'Heterochromatin',
+                            'result':""
+                        },
+                        {
+                            'drafted':false,
+                            'questionText':"9questionText here questionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText herequestionText here",
+                            'correctChoice':'Heterochromatin',
+                            'type':'Heterochromatin',
                             'result':""
                         },
 
                         {
                             'drafted':false,
                             'questionText':"10questionText here",
-                            'correctChoice':'Telomere',
+                            'correctChoice':'Heterochromatin',
+                            'type':'Heterochromatin',
                             'result':""
                         }
                     ],
@@ -381,7 +551,7 @@ export default function appData() {
                         {
                             'index':0,
                             'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
-                            'type': 'Telomere',
+                            'type': 'Euchromatin',
                             'drafted': true,
                             'completed': false,
                             'correctChoice': "A",
@@ -397,7 +567,243 @@ export default function appData() {
                         {
                             'index':0,
                             'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
-                            'type': 'Telomere',
+                            'type': 'Euchromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Euchromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Euchromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Euchromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Euchromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Centromere',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Centromere',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Centromere',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Centromere',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Centromere',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
+                            'drafted': true,
+                            'completed': false,
+                            'correctChoice': "A",
+                            'userChoice': "",
+                            'result': "",
+                            'choiceA': "aaaa2",
+                            'choiceB': "bbbb2",
+                            'choiceC': "cccc2",
+                            'choiceD': "dddd2",
+                            'choiceE': "eeee2",
+                        },
+
+                        {
+                            'index':0,
+                            'questionText': "multiple choice question 1  multiple choice question 1multiple choice question 1multiple choice question 1",
+                            'type': 'Heterochromatin',
                             'drafted': true,
                             'completed': false,
                             'correctChoice': "A",
@@ -419,7 +825,10 @@ export default function appData() {
                     'completed': false,
                     'reports':
                     [
-
+                        {'type':'Telomere',         'questionCount':0, 'correctCount':0 },
+                        {'type':'Euchromatin',      'questionCount':0, 'correctCount':0 },
+                        {'type':'Centromere',       'questionCount':0, 'correctCount':0 },
+                        {'type':'Heterochromatin',  'questionCount':0, 'correctCount':0 },
                     ]
                 },
 

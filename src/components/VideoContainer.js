@@ -23,7 +23,7 @@ const StyledVideoContainer = styled.div`
 
 export default function VideoContainer(props) {
 
-    /*////console.log("video obj rendered: " , myVideo);*/
+    /*////////console.log("video obj rendered: " , myVideo);*/
 
     let [videoFilePath] = useState(null);
 
@@ -31,7 +31,7 @@ export default function VideoContainer(props) {
     });
 
     videoFilePath = props.url
-    /*////console.log("myVideo ---ss->>  : " , videoFilePath)*/
+    /*////////console.log("myVideo ---ss->>  : " , videoFilePath)*/
 
     return (
         <StyledVideoContainer id="styledVideoContainer" bgColor={props.bgColor} textColor={props.textColor}>

@@ -31,7 +31,7 @@ const StyledVideoWrapper =styled.div`
 export const Intro = (props) => {
 
     var obj = props.obj;
-    ////console.log("intro obj :" , obj);
+    //////////console.log("intro obj :" , obj);
     let url = obj.video.url;
     let textColor = obj.textColor;
     let bgColor = obj.bgColor;

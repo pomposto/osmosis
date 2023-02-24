@@ -16,7 +16,7 @@ const StyledPart2 = styled.div`
   height: 821px;
   
   /*background: ${props => `url(${props.bg}) no-repeat top center`};*/
-  background-position: 200px 0px;
+  /*background-position: 200px 0px;*/
 
 `;
 
@@ -40,9 +40,10 @@ const StyledPaginationWrapper = styled.div`
   
 `;
 
-export const Part2b = (props) => {
+export const Part2b = (props) =>
+{
     let obj = props.obj;
-    const QUESTION_SIZE = 5;
+    let QUESTION_SIZE = props.obj.questions.length;
     const [selectedIndex, setSelectedIndex] = useState(0);
     let [questionObject, setQuestionObject] = React.useState(props.obj.questions[selectedIndex]);
 
@@ -52,15 +53,47 @@ export const Part2b = (props) => {
 
     };
 
+    console.log("2b reports : " , props.reports.reports);
+    const handleQuestionCompleted = (type, res) =>
+    {
+         //console.log("question completed :" , type, " res  : " , res);
+         var report = getReportByName(type);
+         report.questionCount++;
+         if(res){report.correctCount++};
+
+         //console.log("completeed ? : " , checkComplete())
+         if(checkComplete())
+         {
+             props.onPartComplete( "Part2b" , props.reports);
+         }
+
+        function getReportByName(type) {
+            for (var i = 0; i < props.reports.reports.length; i++) {
+                if (props.reports.reports[i].type == type) {
+                    return props.reports.reports[i];
+                }
+            }
+        }
+    }
+
+    const checkComplete = function () {
+        for (var i = 0; i < QUESTION_SIZE; i++) {
+            if (props.obj.questions[i].completed == false) {
+
+                return false
+            }
+        }
+
+        return true;
+    }
+
 
     return (
         <StyledPart2 id={"part2"}>
 
 
-            {/*<TextQuestion questionObject={currentSection.question} ></TextQuestion>*/}
-
             <StyledQuestionWrapper className="quetion-wrapper">
-                <MultipleChoiceQuestion questionObject={questionObject}></MultipleChoiceQuestion>
+                <MultipleChoiceQuestion questionObject={questionObject}  onQuestionCompleted={handleQuestionCompleted} ></MultipleChoiceQuestion>
             </StyledQuestionWrapper>
 
 

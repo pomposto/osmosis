@@ -2,11 +2,13 @@ import React, {useState} from "react";
 import styled from 'styled-components';
 import CromosomImage from '../assets/img/mitosis_kromozom.png'
 import ParstContainerBG from '../assets/img/mitosis_hotspots.svg'
+
+import k1 from '../assets/img/k1.png'
 import {propTypes} from "@mui/material/Slider/SliderValueLabel";
 
 const StyledCentromerParts = styled.div`
-  width: 450px;
-  height: 100%;
+  width: 399px;
+  height: 801px;
   position: relative;
   left: 0px;
   top:0px;
@@ -14,10 +16,13 @@ const StyledCentromerParts = styled.div`
   display: inline-block;
 
     background-image: url(${props => props.bg});
+
+    /*background-image: url(${k1});*/
+  
     background-position: 0px 0px;
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    background-color: white;
+    /*background-color: white;*/
 
  
 `;
@@ -33,6 +38,8 @@ const StyledSectionsContainer = styled.div`
     left: 167px;
     
     transform-origin: 0px 0px;
+
+    background-image: url(${props => props.bg});
     
 `;
 
@@ -88,12 +95,12 @@ export const CentromerParts = (prop) => {
 
     const [background, setBackground] = useState(sections[0].bg);
 
-   /* ////console.log("background : ", background);*/
+   /* ////////console.log("background : ", background);*/
 
     const sectionClicked = function (obj) {
         prop.sectionClicked(obj);
 
-        /*////console.log("section clicked obj bg : ", obj);*/
+        /*////////console.log("section clicked obj bg : ", obj);*/
 
         setBackground(obj.bg);
 
@@ -131,7 +138,7 @@ export const CentromerParts = (prop) => {
 const Section = (props) => {
 
     var obj = props.data;
-    /*////console.log("section obj :", obj);*/
+    /*////////console.log("section obj :", obj);*/
 
     const clickHandler = function () {
         props.sectionClicked(obj);

@@ -35,7 +35,7 @@ const StyledVideoWrapper =styled.div`
 `;
 
 export const Part1 = (props) => {
-    ////console.log("Part 1 props  : " , props);
+    ////////console.log("Part 1 props  : " , props);
 
     var currentSectionIndex = 0;
 

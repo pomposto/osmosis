@@ -83,11 +83,11 @@ const CorrectAnswer = styled.p`
   color: #008000;
 `;
 
-const MultipleChoiceQuestion = ({ questionObject }) => {
+const MultipleChoiceQuestion = ({ questionObject, onQuestionCompleted }) => {
     const [selectedChoice, setSelectedChoice] = useState(null);
     const [showResult, setShowResult] = useState(false);
 
-    /*////console.log("questionObject : " , questionObject)*/
+    /*////////console.log("questionObject : " , questionObject)*/
 
     const handleChoiceClick = (choice) => {
 
@@ -95,6 +95,17 @@ const MultipleChoiceQuestion = ({ questionObject }) => {
         setShowResult(true);
         questionObject.userChoice = choice;
         questionObject.completed = true;
+
+        //console.log("currentQuestion : " , questionObject)
+
+        if (choice === questionObject.correctChoice)
+        {
+            onQuestionCompleted(questionObject.type, true);
+        }
+        else
+        {
+            onQuestionCompleted(questionObject.type, false);
+        }
     };
 
     const renderResultIcon = (choice) => {
@@ -105,9 +116,12 @@ const MultipleChoiceQuestion = ({ questionObject }) => {
             return "";
         }
 
-        if (choice === questionObject.correctChoice) {
+        if (choice === questionObject.correctChoice)
+        {
             return <ResultIcon src={correctIcon} alt="Correct" />;
-        } else {
+        }
+        else
+        {
             return <ResultIcon src={wrongIcon} alt="Wrong" />;
         }
     };

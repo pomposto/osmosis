@@ -28,7 +28,7 @@ const StyledButtonContainer = styled.div`
 `;
 
 const StyledNavigateButton = styled.div`
-  margin-left: 10px;
+    margin-left: 10px;
    background-image: url( ${props =>  props.completed === true ? NavigateButtonBGCompleted : NavigateButtonBG } );
    
    width: 40px;
