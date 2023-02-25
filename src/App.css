@@ -17,6 +17,27 @@
 
 }
 
+.part-select-0
+{
+  background-image: url("assets/img/k1.png") !important;
+}
+
+.part-select-1
+{
+  background-image: url("assets/img/k2.png") !important;
+}
+
+.part-select-2
+{
+  background-image: url("assets/img/k3.png") !important;
+}
+
+.part-select-3
+{
+  background-image: url("assets/img/k4.png") !important;
+}
+
+
 #appContent
 {
   position: relative;

@@ -34,15 +34,16 @@ export default function appData() {
                                 'selected': true,
                                 'completed': false,
                                 'name': 'Telomere',
-                                'bg': "../assets/img/k3.png",
+                                'bg': "../assets/img/k1.png",
                                 'color': '#d5eace',
                                 'textColor': '#6E8C66',
+                                'playButton': '../assets/img/mitosis_telomore_play.png',
                                 'video':
                                     {
-                                        'title': 'Telomore Video Title',
+                                        'title': 'Telomore Video Title1',
                                         /*'url': "../assets/videos/vid.mp4",*/
                                         'url': "vid.mp4",
-                                        'width': '400px',
+                                        'width': '600px',
                                         'height': '400px',
                                         'text': 'Lsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf sdfsdfsdf',
                                     },
@@ -57,12 +58,22 @@ export default function appData() {
                                 'selected': false,
                                 'completed': false,
                                 'name': 'Euchromatin',
-                                'bg': "../assets/img/k2.png",
+                                'bg': "../assets/img/mitosis_cycle.png",
                                 'color': '#DAC2F7',
                                 'textColor': '#604679',
                                 'resourceUrl': '',
                                 'text': 'Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum',
                                 'arrowBG': '../assets/img/mitosis_euchromatin_arrow.svg',
+                                'playButton': '../assets/img/mitosis_euchromatin_play.png',
+                                'video':
+                                    {
+                                        'title': 'Telomore Video Title2',
+                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        'url': "vid.mp4",
+                                        'width': '400px',
+                                        'height': '400px',
+                                        'text': 'Lsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf sdfsdfsdf',
+                                    },
                                 'objective': ''
 
                             },
@@ -72,12 +83,22 @@ export default function appData() {
                                 'selected': false,
                                 'completed': false,
                                 'name': 'Centromere',
-                                'bg': '../assets/img/k3.png',
+                                'bg': '../assets/img/mitosis_target.png',
                                 'color': '#CDF7F4',
                                 'textColor': '#48827c',
                                 'resourceUrl': '',
                                 'text': 'Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum',
                                 'arrowBG': '../assets/img/mitosis_centromere_arrow.svg',
+                                'playButton': '../assets/img/mitosis_centromere_play.png',
+                                'video':
+                                    {
+                                        'title': 'Telomore Video Title3',
+                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        'url': "vid.mp4",
+                                        'width': '400px',
+                                        'height': '400px',
+                                        'text': 'Lsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf sdfsdfsdf',
+                                    },
                                 'objective': ''
                             },
 
@@ -92,6 +113,16 @@ export default function appData() {
                                 'resourceUrl': '',
                                 'text': 'Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum  Lorem Ipsum',
                                 'arrowBG': '../assets/img/mitosis_heterochromatin_arrow.svg',
+                                'playButton': '../assets/img/mitosis_euchromatin_play.png',
+                                'video':
+                                    {
+                                        'title': 'Telomore Video Title',
+                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        'url': "vid.mp4",
+                                        'width': '400px',
+                                        'height': '400px',
+                                        'text': 'Lsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdfsdf sdfsdfsdf',
+                                    },
                                 'objective': ''
                             }
                         ]
