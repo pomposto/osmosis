@@ -53,7 +53,7 @@ export const Part2b = (props) =>
 
     };
 
-    console.log("2b reports : " , props.reports.reports);
+    /*console.log("2b reports : " , props.reports.reports);*/
     const handleQuestionCompleted = (type, res) =>
     {
          //console.log("question completed :" , type, " res  : " , res);

@@ -1,8 +1,8 @@
 import React from "react";
-import styled from 'styled-components';
-import {CentromerParts} from "./CentromerParts";
+import styled from "styled-components";
+import { CentromerParts } from "./CentromerParts";
 import VideoContainer from "./VideoContainer";
-import backgroundVideoArea from '../assets/img/mitosis_videoarea.svg';
+import backgroundVideoArea from "../assets/img/mitosis_videoarea.svg";
 
 const StyledPart1 = styled.div`
   position: relative;
@@ -10,7 +10,6 @@ const StyledPart1 = styled.div`
 
   width: 1286px;
   height: 821px;
-
 `;
 
 const StyledVideoWrapper = styled.div`
@@ -29,26 +28,35 @@ const StyledVideoWrapper = styled.div`
   background-image: url(${backgroundVideoArea});
   background-position: 0px 0px;
   background-repeat: no-repeat;
-
 `;
 
 export const Part1 = (props) => {
-    var currentSectionIndex = 0;
+  var currentSectionIndex = 0;
 
-    let [currentSection, setCurrentSection] = React.useState(props.obj.sections[currentSectionIndex]);
-    currentSection = props.obj.sections[currentSectionIndex];
+  let [currentSection, setCurrentSection] = React.useState(
+    props.obj.sections[currentSectionIndex]
+  );
+  currentSection = props.obj.sections[currentSectionIndex];
 
-    let [title, setTitle] = React.useState(props.obj.sections[currentSectionIndex].name);
-    let [index, setIndex] = React.useState(1);
+  let [title, setTitle] = React.useState(
+    props.obj.sections[currentSectionIndex].name
+  );
+  let [index, setIndex] = React.useState(1);
 
-    let [bgColor, setBgColor] = React.useState(props.obj.sections[currentSectionIndex].color);
-    let [textColor, setTextColor] = React.useState(props.obj.sections[currentSectionIndex].textColor);
-    let [playButton, setPlayButton] = React.useState(props.obj.sections[currentSectionIndex].playButton);
-    let [video, setVideo] = React.useState(props.obj.sections[currentSectionIndex].video);
+  let [bgColor, setBgColor] = React.useState(
+    props.obj.sections[currentSectionIndex].color
+  );
+  let [textColor, setTextColor] = React.useState(
+    props.obj.sections[currentSectionIndex].textColor
+  );
+  let [playButton, setPlayButton] = React.useState(
+    props.obj.sections[currentSectionIndex].playButton
+  );
+  let [video, setVideo] = React.useState(
+    props.obj.sections[currentSectionIndex].video
+  );
 
-
-    let sectionClicked = function (obj) {
-
+  let sectionClicked = function (obj) {
     currentSection = obj;
     setCurrentSection(obj);
     setVideo(obj.video);
@@ -66,27 +74,33 @@ export const Part1 = (props) => {
     setBgColor(bgColor);
 
     props.obj.sections.forEach((item, i) => {
-        item.selected = false;
+      item.selected = false;
     });
 
     obj.selected = true;
     obj.completed = true;
+  };
 
+  return (
+    <StyledPart1 id={"part1"}>
+      <CentromerParts
+        id="centromerParts_1"
+        sectionClicked={sectionClicked}
+        obj={props.obj.sections}
+      ></CentromerParts>
 
-    }
-
-    return (
-        <StyledPart1 id={"part1"}>
-
-            <CentromerParts id="centromerParts_1" sectionClicked={sectionClicked}
-                            obj={props.obj.sections}></CentromerParts>
-
-            <StyledVideoWrapper id={"videoWrapper"}>
-                <VideoContainer playButton={playButton} bgColor={bgColor} id="videoContainer" textColor={textColor} index={index} title={title} video={video}
-                                data={currentSection}/>
-            </StyledVideoWrapper>
-
-        </StyledPart1>
-    )
-
-}
+      <StyledVideoWrapper id={"videoWrapper"}>
+        <VideoContainer
+          playButton={playButton}
+          bgColor={bgColor}
+          id="videoContainer"
+          textColor={textColor}
+          index={index}
+          title={title}
+          video={video}
+          data={currentSection}
+        />
+      </StyledVideoWrapper>
+    </StyledPart1>
+  );
+};

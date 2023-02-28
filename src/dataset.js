@@ -866,9 +866,31 @@ export default function appData() {
 
                 {
                     'id': 5,
-                    'name': "intro",
+                    'name': "Part3",
                     'resourceUrl': '',
-                    'completed': false
+                    'completed': false,
+
+                    'videos': [
+                       {
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video',
+                        },
+
+                        {
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video',
+                        },
+
+
+                      ]
                 },
 
 
