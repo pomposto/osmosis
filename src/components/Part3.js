@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
-
-import Part3Bg from '../assets/img/mitosis_cycle_area.svg';
-import Part3Content from '../assets/img/mitosis_cycle_inactive.png';
-import Part3ContentZoomed from '../assets/img/mitosis_cycle_zoom.png';
-import VideoLeft from '../assets/img/mitosis_g2_play.png';
-import VideoRight from '../assets/img/mitosis_g1_play.png';
-
 import styled from "styled-components";
 
+import Part3Bg from "../assets/img/mitosis_cycle_area.svg";
+import Part3Content from "../assets/img/mitosis_cycle_inactive.png";
+import Part3ContentZoomed from "../assets/img/mitosis_cycle_zoom.png";
+import VideoLeft from "../assets/img/mitosis_g2_play.png";
+import VideoRight from "../assets/img/mitosis_g1_play.png";
+import CloseIcon from "../assets/img/close.svg";
 
 const StyledContainer = styled.div`
   position: relative;
@@ -33,7 +32,7 @@ const StyledContent = styled.div`
   background-image: url(${Part3Content});
 `;
 
-const SyledContentZoomed = styled.div`
+const StyledContentZoomed = styled.div`
   position: absolute;
   width: 1118px;
   height: 678px;
@@ -71,10 +70,9 @@ const StyledVideoButton = styled.div`
   position: absolute;
   top: 0px;
   left: 0px;
-  width: 100px;
-  height: 50px;
-
-  background-color: red;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
 `;
 
 const StyledZoomButton = styled.div`
@@ -87,38 +85,88 @@ const StyledZoomButton = styled.div`
   border-width: 300px 220px 130px 170px;
   border-color: rgba(0, 123, 255, 0.16) transparent transparent transparent;
   cursor: pointer;
-
 `;
 
+const StyledVideoPopup = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /*background-color: rgba(0, 0, 0, 0.5);*/
+
+  display: ${(props) => (props.show ? "flex" : "none")};
+  
+  justify-content: center;
+  align-items: center;
+
+  
+  
+`;
+
+const StyledVideoPopupContent = styled.div`
+  position: relative;
+  width: ${(props) => props.width || "auto"};
+  height: ${(props) => props.height || "auto"};
+  background-color: #fff;
+  padding: 40px;
+
+  -webkit-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.56);
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.56);
+  
+`;
+
+const StyledVideoPopupClose = styled.div`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 20px;
+  height: 20px;
+  background-image: url(${CloseIcon});
+  background-size: cover;
+  cursor: pointer;
+`;
 
 const Part3 = (props) => {
+  console.log("part3 props : ", props);
 
-  console.log("props.obj 3 : ", props.obj);
+  const { videoUrl, videoWidth, videoHeight } = props.obj;
 
-   let [zoomed, setZoomed] = useState(false);
+  const [zoomed, setZoomed] = useState(false);
+  const [showVideoPopup, setShowVideoPopup] = useState(false);
+
+  const toggleZoom = () => setZoomed(!zoomed);
+
+  const toggleVideoPopup = () => setShowVideoPopup(!showVideoPopup);
 
   return (
-
     <StyledContainer>
-      <StyledBackground></StyledBackground>
-      <StyledContent>
+      <StyledBackground />
+      <StyledContent />
 
-      </StyledContent>
+      <StyledVideoItemLeft onClick={toggleVideoPopup} />
+      <StyledVideoItemRight onClick={toggleVideoPopup} />
 
-      <StyledVideoItemLeft>
-        {/*<StyledVideoButton></StyledVideoButton>*/}
-      </StyledVideoItemLeft>
+      <StyledZoomButton onClick={toggleZoom} />
 
-      <StyledVideoItemRight>
-        {/*<StyledVideoButton></StyledVideoButton>*/}
-      </StyledVideoItemRight>
+      <StyledContentZoomed zoomed={zoomed}>
 
-      <StyledZoomButton onClick={() => setZoomed(!zoomed)}></StyledZoomButton>
+      </StyledContentZoomed>
 
-      <SyledContentZoomed zoomed={zoomed}></SyledContentZoomed>
+
+      <StyledVideoPopup show={showVideoPopup}>
+        <StyledVideoPopupContent>
+          <video width={videoWidth} height={videoHeight} controls>
+            <source src={videoUrl} type="video/mp4" />
+          </video>
+          <StyledVideoPopupClose className={'popup-video-close'} onClick={toggleVideoPopup} />
+        </StyledVideoPopupContent>
+
+      </StyledVideoPopup>
+
 
     </StyledContainer>
-
   );
 };
 

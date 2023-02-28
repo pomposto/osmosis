@@ -8,7 +8,7 @@ const StyledFooter = styled.div`
   position: absolute;
   width: 100%;
   bottom: 0px;
-  height: 12vh;
+  height: 80px;
 
 
 `;

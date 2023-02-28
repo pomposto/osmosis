@@ -896,9 +896,52 @@ export default function appData() {
 
                 {
                     'id': 6,
-                    'name': "intro",
+                    'name': "Part4",
                     'resourceUrl': '',
-                    'completed': false
+                    'completed': false,
+
+                    'videos': [
+                        {
+                            'id': 0,
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+                            'completed': false,
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video',
+                        },
+
+                        {
+                            'id': 1,
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+                            'completed': false,
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video',
+                        },
+
+                        {
+                            'id': 2,
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+                            'completed': false,
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video',
+                        },
+
+                        {
+                            'id': 3,
+                            'title': 'Intro Video Ttile',
+                            'url': "../assets/videos/vid.mp4",
+                            'completed': false,
+                            'width': '400px',
+                            'height': '400px',
+                            'text': 'intro video'
+                        }
+                        ]
+
                 },
 
 

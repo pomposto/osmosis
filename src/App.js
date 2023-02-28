@@ -17,12 +17,14 @@ import { Intro } from "./components/Intro";
 import { Part1 } from "./components/Part1";
 import { Part2a } from "./components/Part2a";
 import { Part2b } from "./components/Part2b";
+import Part3 from "./components/Part3";
+import Part4 from "./components/Part4";
 import Reports1 from "./components/Reports1";
 import appData from "./dataset.js";
 import { Content } from "./partials/Content";
 import styled from "styled-components";
 import appContentBG from "./assets/img/mitosis_bg.png";
-import Part3 from "./components/Part3";
+
 
 const AppContent = styled.div`
   /*background-image: url(${appContentBG});*/
@@ -40,7 +42,8 @@ function App() {
     { route: "/Part2a", index: 2 },
     { route: "/Part2b", index: 3 },
     { route: "/Part2c", index: 4 },
-    { route: "/Part3", index: 6 },
+    { route: "/Part3", index: 5 },
+    { route: "/Part4", index: 6 },
   ];
 
   let partIndex = getIndexByRoute(location.pathname);
@@ -198,6 +201,8 @@ function App() {
           <Route path="/Part2c" element={<Reports1 obj={reportObj1} />}></Route>
 
           <Route path="/Part3" element={<Part3 obj={obj} />}></Route>
+
+          <Route path="/Part4" element={<Part4 obj={obj} />}></Route>
 
         </Routes>
       </AppContent>
