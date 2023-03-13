@@ -19,6 +19,8 @@ import { Part2a } from "./components/Part2a";
 import { Part2b } from "./components/Part2b";
 import Part3 from "./components/Part3";
 import Part4 from "./components/Part4";
+import Part5 from "./components/Part5";
+import Part6 from "./components/Part6";
 import Reports1 from "./components/Reports1";
 import appData from "./dataset.js";
 import { Content } from "./partials/Content";
@@ -44,6 +46,9 @@ function App() {
     { route: "/Part2c", index: 4 },
     { route: "/Part3", index: 5 },
     { route: "/Part4", index: 6 },
+    { route: "/Part5", index: 7 },
+    { route: "/Part5b", index: 8 },
+    { route: "/Part6", index: 9 },
   ];
 
   let partIndex = getIndexByRoute(location.pathname);
@@ -53,9 +58,8 @@ function App() {
   const [obj, setObj] = useState(dataSet.parts[partIndex]);
 
 
-  let [reportObj1, setReportObj1] = useState(
-    getPartByName(dataSet.parts, "Part2c")
-  );
+  let [reportObj1, setReportObj1] = useState(getPartByName(dataSet.parts, "Part2c"));
+  let [reportObj2, setReportObj2] = useState(getPartByName(dataSet.parts, "Part2c"));
 
   var Part2aObj = getPartByName(dataSet.parts, "Part2a");
   Part2aObj.questions = shuffleQuestions(Part2aObj.questions);
@@ -65,7 +69,9 @@ function App() {
   Part2bObj.questions = shuffleQuestions(Part2bObj.questions);
   Part2bObj.questions = getQuestions(Part2bObj.questions, 1, 1, 1, 1);
 
-
+  var Part5bObj = getPartByName(dataSet.parts, "Part5b");
+  Part5bObj.questions = shuffleQuestions(Part5bObj.questions);
+  Part5bObj.questions = getQuestions(Part5bObj.questions, 1, 1, 1, 1);
 
   function nextClickHandler() {
     partIndex++;
@@ -78,7 +84,6 @@ function App() {
   function getIndexByRoute(route) {
     return routes.findIndex((r) => r.route === route);
   }
-
 
   function getPartByName(arr, partName) {
     for (let i = 0; i < arr.length; i++) {
@@ -150,9 +155,11 @@ function App() {
 
       case "Part2b":
         setReportObj1(obj);
+        break;
 
-        /*  console.log("dataSet.parts : " , dataSet.parts);
-            console.log("reportObj1 : " , reportObj1);*/
+      case "Part5b":
+        setReportObj2(obj);
+
 
         break;
     }
@@ -198,11 +205,24 @@ function App() {
               />
             }
           ></Route>
+
           <Route path="/Part2c" element={<Reports1 obj={reportObj1} />}></Route>
-
           <Route path="/Part3" element={<Part3 obj={obj} />}></Route>
-
           <Route path="/Part4" element={<Part4 obj={obj} />}></Route>
+          <Route path="/Part5" element={<Part5 obj={obj} />}></Route>
+
+          <Route
+            path="/Part5b"
+            element={
+              <Part2b
+                obj={obj}
+                reports={reportObj2}
+                onPartComplete={onPartCompleteHandler}
+              />
+            }
+          ></Route>
+
+          <Route path="/Part6" element={<Part6 obj={obj} />}></Route>
 
         </Routes>
       </AppContent>
