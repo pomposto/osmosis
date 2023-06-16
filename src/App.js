@@ -107,22 +107,22 @@ function App() {
     var i = 0;
     while (te + eu + ce + he < telomere + euchro + centromere + hetero) {
       var currentQuestion = arr[i];
-      if (currentQuestion.type == "Telomere") {
+      if (currentQuestion.type === "Telomere") {
         if (te < telomere) {
           newArr.push(currentQuestion);
           te++;
         }
-      } else if (currentQuestion.type == "Euchromatin") {
+      } else if (currentQuestion.type === "Euchromatin") {
         if (eu < euchro) {
           newArr.push(currentQuestion);
           eu++;
         }
-      } else if (currentQuestion.type == "Centromere") {
+      } else if (currentQuestion.type === "Centromere") {
         if (ce < centromere) {
           newArr.push(currentQuestion);
           ce++;
         }
-      } else if (currentQuestion.type == "Heterochromatin") {
+      } else if (currentQuestion.type === "Heterochromatin") {
         if (he < hetero) {
           newArr.push(currentQuestion);
           he++;

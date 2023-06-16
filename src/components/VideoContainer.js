@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import ReactPlayer from "react-player";
 
-import myVideo from "../assets/videos/vid.mp4";
+import myVideo from "../assets/videos/vid3.mp4";
 
 const StyledVideoContainer = styled.div`
   position: relative;

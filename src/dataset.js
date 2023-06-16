@@ -13,7 +13,7 @@ export default function appData() {
                     'video':
                         {
                             'title': 'Intro Video Ttile',
-                            /*'url': "../assets/videos/vid.mp4",*/
+                            /*'url': "../assets/videos/vid3.mp4",*/
                             'url': "intro.mp4",
                             'width': '1220px',
                             'height': '700px',
@@ -41,7 +41,7 @@ export default function appData() {
                                 'video':
                                     {
                                         'title': 'Telomore Video Title1',
-                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        /*'url': "../assets/videos/vid3.mp4",*/
                                         'url': "04_telomeres.mp4",
                                         'width': '600px',
                                         'height': '400px',
@@ -68,7 +68,7 @@ export default function appData() {
                                 'video':
                                     {
                                         'title': 'Telomore Video Title2',
-                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        /*'url': "../assets/videos/vid3.mp4",*/
                                         'url': "vid.mp4",
                                         'width': '400px',
                                         'height': '400px',
@@ -93,7 +93,7 @@ export default function appData() {
                                 'video':
                                     {
                                         'title': 'Telomore Video Title3',
-                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        /*'url': "../assets/videos/vid3.mp4",*/
                                         'url': "vid.mp4",
                                         'width': '400px',
                                         'height': '400px',
@@ -117,7 +117,7 @@ export default function appData() {
                                 'video':
                                     {
                                         'title': 'Telomore Video Title',
-                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        /*'url': "../assets/videos/vid3.mp4",*/
                                         'url': "vid.mp4",
                                         'width': '400px',
                                         'height': '400px',
@@ -387,7 +387,7 @@ export default function appData() {
                                 'video':
                                     {
                                         'title': 'Telomore Video Title',
-                                        /*'url': "../assets/videos/vid.mp4",*/
+                                        /*'url': "../assets/videos/vid3.mp4",*/
                                         'url': "vid.mp4",
                                         'width': '400px',
                                         'height': '400px',

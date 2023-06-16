@@ -50,14 +50,16 @@ export const Intro = (props) => {
                 controls
 
                 /*url={"../assets/videos/" + videoData.url}*/
-               /* url={"../assets/videos/vid.mp4"}*/
-               /* url={"../assets/videos/intro.mp4"}*/
-                url={"../assets/videos/vid2.mp4"}
+                url={"../assets/videos/vid.mp4?v=1234"}
+                /*url={"../assets/videos/intro.mp4"}*/
+                /*url={"../assets/videos/vid2.mp4"}*/
                /* url={require(`../assets/videos/${videoData.url}`).default}*/
-
-                /*url={require("../assets/videos/vid.mp4").default}*/
+                /*url={require("../assets/videos/vid3.mp4").default}*/
               >
               </ReactPlayer>
+
+
+
 
           </StyledVideoWrapper>
 
