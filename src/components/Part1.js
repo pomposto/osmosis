@@ -12,9 +12,17 @@ const StyledPart1 = styled.div`
   height: 821px;
 `;
 
+
+const CentromerPartsBG = styled.div`
+  position: relative;
+  /*background-color: rgba(255,127,80,0.49);*/
+
+  
+`;
+
 const StyledVideoWrapper = styled.div`
-  width: 854px;
-  height: 753px;
+  width: 884px;
+  height: 783px;
   position: relative;
   display: inline-block;
   /*background-image: url("../assets/img/mitosis_intro_area.svg");*/

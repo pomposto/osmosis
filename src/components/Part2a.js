@@ -10,8 +10,8 @@ const StyledPart2a = styled.div`
   position: relative;
   /*background-color: rgba(255,127,80,0.49);*/
   
-  width: 1286px;
-  height: 821px;
+  width: 1000px;
+  height: 800px;
   
 `;
 const CentromerPartsWrapper = styled.div`
@@ -26,7 +26,7 @@ const StyledQuestionWrapper = styled.div`
     width: 830px;
     height: 720px;
     position: relative;
-    left: 500px;
+    left: 410px;
     
     /*background-image: url("../assets/img/mitosis_intro_area.svg");*/
     background-size: 100% 100%;

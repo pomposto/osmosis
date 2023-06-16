@@ -20,11 +20,37 @@ const StyledVideoContainer = styled.div`
   box-sizing: border-box;
 `;
 
+
+const StyledVideoText = styled.div`
+  position: absolute;
+ 
+  top: 100px;
+  left: 0px;
+  
+  width: 100%;
+  height: 200px;
+  /*background-color: red;*/
+
+  color: ${(props) => props.color};
+  /*color: black;*/
+  border-radius: 10px;
+  padding-top: 30px;
+
+  
+`;
+const StyledVideoWrapper = styled.div`
+
+`;
+const StyledPlayerWrapper = styled.div`
+  position: relative;
+  top: 200px;
+`;
+
 const StyledVideoGlass = styled.div`
   position: absolute;
   width: 100%;
   height: 500px;
-  top: 120px;
+  top: 220px;
   left: 0px;
 
   background-color: ${(props) => props.bgColor};
@@ -66,20 +92,22 @@ export default function VideoContainer(props) {
       bgColor={props.bgColor}
       textColor={props.textColor}
     >
-      <div id="videoContainer_videoWrapper">
+      <StyledVideoWrapper>
         <h1>
           {props.title} {props.index}
         </h1>
-        <div>{props.data.video.text}</div>
+        <StyledVideoText color={props.data.textColor}>{props.data.video.text}</StyledVideoText>
 
-        <ReactPlayer
-          width={props.video.width}
-          height={props.video.height}
-          controls
-          /*url={videoFilePath}*/
-          url={props.video.url}
-          playing={playClicked}
-        ></ReactPlayer>
+        <StyledPlayerWrapper>
+          <ReactPlayer
+            width={props.video.width}
+            height={props.video.height}
+            controls
+            /*url={videoFilePath}*/
+            url={"/assets/videos/" + props.video.url}
+            playing={playClicked}
+          ></ReactPlayer>
+        </StyledPlayerWrapper>
 
         <StyledVideoGlass bgColor={props.bgColor} clicked={playClicked}>
           <StyledPlayButton
@@ -87,7 +115,9 @@ export default function VideoContainer(props) {
             onClick={playButtonClicked}
           />
         </StyledVideoGlass>
-      </div>
+
+
+      </StyledVideoWrapper>
     </StyledVideoContainer>
   );
 }

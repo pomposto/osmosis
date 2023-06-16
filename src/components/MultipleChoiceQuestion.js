@@ -79,8 +79,11 @@ const ResultIcon = styled.img`
 `;
 
 const CorrectAnswer = styled.p`
-  margin-top: 50px;
+  margin-top: 40px;
   color: #008000;
+  
+  width: 200px;
+  padding-left: 70px;
 `;
 
 const MultipleChoiceQuestion = ({ questionObject, onQuestionCompleted }) => {

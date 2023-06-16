@@ -166,7 +166,7 @@ function App() {
   }
 
   const handleResize = () => {
-    const ratio = window.innerWidth / 3000;
+    const ratio = window.innerWidth / 2700;
 
     document.getElementById("mainApp").style.transform = "scale(" + ratio + ")";
   };

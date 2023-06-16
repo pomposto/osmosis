@@ -9,7 +9,7 @@ const PaginationWrapper = styled.div`
 
 const PageNumber = styled.div`
    margin: 0 10px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: ${(props) => (props.isSelected ? "bold" : "normal")};
   cursor: pointer;
   
@@ -24,7 +24,7 @@ const PageNumber = styled.div`
 
 const PrevNextButton = styled.div`
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   cursor: pointer;
 
